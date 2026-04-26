@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +17,7 @@ color:#fff;
 overflow-x:hidden;
 }
 
-/* 🌌 خلفية متحركة */
+/* خلفية متحركة */
 .background{
 position:fixed;
 width:100%;
@@ -33,7 +34,7 @@ animation:gradientMove 12s ease infinite;
 100%{background-position:0% 50%;}
 }
 
-/* 🔥 NAV */
+/* NAV */
 nav{
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
@@ -56,7 +57,7 @@ nav a:hover{
 color:#fff;
 }
 
-/* 🧱 أقسام */
+/* Sections */
 section{
 padding:80px 20px;
 text-align:center;
@@ -70,7 +71,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* 💎 كروت */
+/* Cards */
 .card{
 background:rgba(17,24,39,0.8);
 padding:20px;
@@ -86,27 +87,8 @@ transform:scale(1.05);
 box-shadow:0 0 25px rgba(56,189,248,0.6);
 }
 
-/* 🎮 HERO */
-.hero{
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:42px;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{ text-shadow:0 0 10px #0ea5e9;}
-to{ text-shadow:0 0 30px #38bdf8;}
-}
-
-/* 📱 */
-@media(max-width:768px){
-.hero h1{font-size:28px;}
-.card{width:95%;}
-}
-  .click-effect {
+/* Click Effect */
+.click-effect{
 position:absolute;
 border-radius:50%;
 background:rgba(56,189,248,0.8);
@@ -115,200 +97,24 @@ animation:explode 0.6s ease-out;
 pointer-events:none;
 }
 
-@keyframes explode {
-0%{transform:scale(0); opacity:1;}
-100%{transform:scale(6); opacity:0;}
+@keyframes explode{
+0%{transform:scale(0);opacity:1;}
+100%{transform:scale(6);opacity:0;}
 }
 
-nav a {
-position:relative;
-overflow:hidden;
-}
-
-nav a::after {
-content:'';
-position:absolute;
-width:100%;
-height:2px;
-background:#38bdf8;
-left:-100%;
-bottom:0;
-transition:0.3s;
-}
-
-nav a:hover::after {
-left:0;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="background"></div>
-
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#fps">FPS</a>
-<a href="#settings">الإعدادات</a>
-<a href="#problems">المشاكل</a>
-<a href="#contact">تواصل</a>
-</nav>
-
-<section id="home" class="hero">
-<h1>🎮 GameFix Arabia</h1>
-<p>حلول الألعاب + رفع FPS + إعدادات احترافية</p>
-</section>
-
-<section id="fps">
-<h1>⚡ تحسين FPS</h1>
-<div class="card">
-<p>✔ إغلاق البرامج ✔ تحديث التعريفات ✔ تقليل الجرافيكس ✔ Fullscreen</p>
-</div>
-</section>
-
-<section id="settings">
-<h1>🎯 الإعدادات</h1>
-<div class="card">
-<p>✔ Motion Blur Off ✔ Shadows Low ✔ FOV High ✔ Sensitivity Medium</p>
-</div>
-</section>
-
-<section id="problems">
-<h1>⚠️ حل المشاكل</h1>
-<div class="card">
-<p>✔ الكراش ✔ اللاق ✔ التقطيع</p>
-</div>
-</section>
-
-<section id="contact">
-<h1>📞 تواصل</h1>
-<div class="card">
-<p>راسلنا لأي مشكلة</p>
-</div>
-</section>
-
-<script>
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-sections.forEach(sec => {
-const top = sec.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-sec.classList.add("show");
-}
-});
-});
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GameFix Arabia</title>
-
-<style>
-html {scroll-behavior:smooth;}
-
-body{
-margin:0;
-font-family:Tahoma;
-background:#020617;
-color:#fff;
-overflow-x:hidden;
-}
-
-/* 🌌 خلفية متحركة */
-.background{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-background:linear-gradient(270deg,#0ea5e9,#9333ea,#020617);
-background-size:600% 600%;
-animation:gradientMove 12s ease infinite;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* 🔥 NAV */
-nav{
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-padding:15px;
-position:sticky;
-top:0;
-text-align:center;
-z-index:1000;
-}
-
-nav a{
-color:#38bdf8;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#fff;
-}
-
-/* 🧱 أقسام */
-section{
-padding:80px 20px;
-text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:0.8s;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* 💎 كروت */
-.card{
-background:rgba(17,24,39,0.8);
-padding:20px;
-margin:20px auto;
-width:85%;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-transition:0.3s;
-}
-
-.card:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(56,189,248,0.6);
-}
-
-/* 🎮 HERO */
+/* Hero */
 .hero{
 padding:120px 20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:40px;
 animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
-from{ text-shadow:0 0 10px #0ea5e9;}
-to{ text-shadow:0 0 30px #38bdf8;}
-}
-
-/* 📱 */
-@media(max-width:768px){
-.hero h1{font-size:28px;}
-.card{width:95%;}
+from{text-shadow:0 0 10px #0ea5e9;}
+to{text-shadow:0 0 30px #38bdf8;}
 }
 </style>
 
@@ -323,8 +129,8 @@ to{ text-shadow:0 0 30px #38bdf8;}
 <a href="#fps">FPS</a>
 <a href="#settings">الإعدادات</a>
 <a href="#problems">المشاكل</a>
-<a href="#contact">تواصل</a>
 <a href="#articles">المقالات</a>
+<a href="#contact">تواصل</a>
 </nav>
 
 <section id="home" class="hero">
@@ -353,16 +159,39 @@ to{ text-shadow:0 0 30px #38bdf8;}
 </div>
 </section>
 
+<section id="articles">
+<h1>📰 المقالات</h1>
+
+<div class="card">
+<h2>كيف ترفع FPS في الألعاب</h2>
+<p>قلل الجرافيكس، حدث التعريفات، وأغلق البرامج الخلفية لتحسين الأداء.</p>
+</div>
+
+<div class="card">
+<h2>أفضل إعدادات للألعاب التنافسية</h2>
+<p>استخدم FOV عالي، أوقف Motion Blur، وخلي Shadows منخفضة.</p>
+</div>
+
+</section>
+
 <section id="contact">
 <h1>📞 تواصل</h1>
 <div class="card">
-<p>راسلنا لأي مشكلة</p>
+<p>راسلنا لأي مشكلة أو اقتراح</p>
 </div>
 </section>
 
+<!-- الأصوات -->
+
+<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3"></audio> <audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6cc9b9e6c5.mp3"></audio> <audio id="navSound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_9c3d8b4c1a.mp3"></audio>
+
 <script>
 const sections = document.querySelectorAll("section");
+const clickSound = document.getElementById("clickSound");
+const hoverSound = document.getElementById("hoverSound");
+const navSound = document.getElementById("navSound");
 
+/* ظهور الأقسام */
 window.addEventListener("scroll", () => {
 sections.forEach(sec => {
 const top = sec.getBoundingClientRect().top;
@@ -371,37 +200,39 @@ sec.classList.add("show");
 }
 });
 });
+
+/* الضغط */
+document.addEventListener("click", function(e){
+clickSound.currentTime = 0;
+clickSound.play();
+
+const effect = document.createElement("div");
+effect.className = "click-effect";
+effect.style.left = e.pageX + "px";
+effect.style.top = e.pageY + "px";
+effect.style.width = "25px";
+effect.style.height = "25px";
+
+document.body.appendChild(effect);
+setTimeout(()=> effect.remove(),600);
+});
+
+/* Hover */
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("mouseenter",()=>{
+hoverSound.currentTime=0;
+hoverSound.play();
+});
+});
+
+/* Nav sound */
+document.querySelectorAll("nav a").forEach(link=>{
+link.addEventListener("click",()=>{
+navSound.currentTime=0;
+navSound.play();
+});
+});
 </script>
-<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3"></audio>
-<audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6cc9b9e6c5.mp3"></audio>
-<audio id="navSound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_9c3d8b4c1a.mp3"></audio>
-<section id="articles">
-<h1>📰 المقالات</h1>
-<div class="card">
-<h2>اسطورة تطوير المواقع</h2>
-<p>
-علي ارجل مطور
-</p>
-</div>
-<div class="card">
-<h2>كيف ترفع FPS في الألعاب</h2>
-<p>
-إذا كنت تعاني من تقطيع:
-<br>✔ قلل الجرافيكس
-<br>✔ حدث التعريفات
-<br>✔ أغلق البرامج الخلفية
-</p>
-</div>
 
-<div class="card">
-<h2>أفضل إعدادات للألعاب التنافسية</h2>
-<p>
-<br>✔ Motion Blur: Off
-<br>✔ Shadows: Low
-<br>✔ FOV: High
-</p>
-</div>
-
-</section>
 </body>
 </html>
