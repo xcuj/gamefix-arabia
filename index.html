@@ -167,7 +167,39 @@ sec.classList.add("show");
 });
 });
 </script>
+<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3?filename=click-124467.mp3"></audio>
 
+<script>
+const sound = document.getElementById("clickSound");
+
+// تشغيل الصوت عند أي ضغط
+document.addEventListener("click", function(e){
+
+// تشغيل الصوت
+sound.currentTime = 0;
+sound.play();
+
+// تأثير بصري
+const effect = document.createElement("div");
+effect.className = "click-effect";
+
+effect.style.left = e.pageX + "px";
+effect.style.top = e.pageY + "px";
+effect.style.width = "20px";
+effect.style.height = "20px";
+
+document.body.appendChild(effect);
+
+// حذف التأثير بعد انتهاءه
+setTimeout(() => {
+effect.remove();
+}, 500);
+
+});
+</script>
+<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3"></audio>
+<audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6cc9b9e6c5.mp3"></audio>
+<audio id="navSound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_9c3d8b4c1a.mp3"></audio>
 </body>
 </html><!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -338,38 +370,6 @@ sec.classList.add("show");
 });
 });
 </script>
-  <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3?filename=click-124467.mp3"></audio>
-
-<script>
-const sound = document.getElementById("clickSound");
-
-// تشغيل الصوت عند أي ضغط
-document.addEventListener("click", function(e){
-
-// تشغيل الصوت
-sound.currentTime = 0;
-sound.play();
-
-// تأثير بصري
-const effect = document.createElement("div");
-effect.className = "click-effect";
-
-effect.style.left = e.pageX + "px";
-effect.style.top = e.pageY + "px";
-effect.style.width = "20px";
-effect.style.height = "20px";
-
-document.body.appendChild(effect);
-
-// حذف التأثير بعد انتهاءه
-setTimeout(() => {
-effect.remove();
-}, 500);
-
-});
-</script>
-<audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3"></audio>
-<audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6cc9b9e6c5.mp3"></audio>
-<audio id="navSound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_9c3d8b4c1a.mp3"></audio>
+  
 </body>
 </html>
