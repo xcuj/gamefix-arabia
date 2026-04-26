@@ -290,6 +290,33 @@ box-shadow:0 0 10px #25D366;
 transform:scale(1.1);
 box-shadow:0 0 20px #25D366;
 }
+  .footer{
+margin-top:50px;
+padding:40px 20px;
+background:rgba(0,0,0,0.6);
+text-align:center;
+backdrop-filter:blur(10px);
+}
+
+.footer-card{
+margin:15px auto;
+padding:15px;
+width:80%;
+background:rgba(17,24,39,0.8);
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+transition:0.3s;
+}
+
+.footer-card:hover{
+transform:scale(1.03);
+box-shadow:0 0 20px rgba(56,189,248,0.5);
+}
+
+.footer h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
 </style>
 </section>
 
@@ -345,6 +372,21 @@ navSound.play();
 });
 });
 </script>
+<footer class="footer">
+  <div class="footer-card">
+    <h3>👨‍💻 المطورين</h3>
+    <p>تم تطوير الموقع بواسطة فريق GameFix</p>
+  </div>
 
+  <div class="footer-card">
+    <h3>📌 فريق التطوير</h3>
+    <p>Ali Ayyash - مطور الواجهة والتصميم</p>
+  </div>
+
+  <div class="footer-card">
+    <h3>© الحقوق</h3>
+    <p>جميع الحقوق محفوظة © GameFix 2026</p>
+  </div>
+</footer>
 </body>
 </html>
