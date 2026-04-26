@@ -324,6 +324,7 @@ to{ text-shadow:0 0 30px #38bdf8;}
 <a href="#settings">الإعدادات</a>
 <a href="#problems">المشاكل</a>
 <a href="#contact">تواصل</a>
+<a href="#articles">المقالات</a>
 </nav>
 
 <section id="home" class="hero">
@@ -374,46 +375,28 @@ sec.classList.add("show");
 <audio id="clickSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b1c7f.mp3"></audio>
 <audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6cc9b9e6c5.mp3"></audio>
 <audio id="navSound" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_9c3d8b4c1a.mp3"></audio>
+<section id="articles">
+<h1>📰 المقالات</h1>
 
-const clickSound = document.getElementById("clickSound");
-const hoverSound = document.getElementById("hoverSound");
-const navSound = document.getElementById("navSound");
+<div class="card">
+<h2>كيف ترفع FPS في الألعاب</h2>
+<p>
+إذا كنت تعاني من تقطيع:
+<br>✔ قلل الجرافيكس
+<br>✔ حدث التعريفات
+<br>✔ أغلق البرامج الخلفية
+</p>
+</div>
 
-// 🎯 عند الضغط
-document.addEventListener("click", function(e){
+<div class="card">
+<h2>أفضل إعدادات للألعاب التنافسية</h2>
+<p>
+<br>✔ Motion Blur: Off
+<br>✔ Shadows: Low
+<br>✔ FOV: High
+</p>
+</div>
 
-clickSound.currentTime = 0;
-clickSound.play();
-
-// تأثير انفجار
-const effect = document.createElement("div");
-effect.className = "click-effect";
-
-effect.style.left = e.pageX + "px";
-effect.style.top = e.pageY + "px";
-effect.style.width = "25px";
-effect.style.height = "25px";
-
-document.body.appendChild(effect);
-
-setTimeout(()=> effect.remove(), 600);
-
-});
-
-// 🎧 Hover على الأزرار
-document.querySelectorAll("a").forEach(link => {
-link.addEventListener("mouseenter", () => {
-hoverSound.currentTime = 0;
-hoverSound.play();
-});
-});
-
-// 🔥 صوت خاص للقائمة
-document.querySelectorAll("nav a").forEach(link => {
-link.addEventListener("click", () => {
-navSound.currentTime = 0;
-navSound.play();
-});
-});
+</section>
 </body>
 </html>
